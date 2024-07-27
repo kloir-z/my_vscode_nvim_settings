@@ -33,10 +33,8 @@ vim.keymap.set('n', '<C-e>', '<cmd>normal! <C-e><C-e><CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'gs', '<cmd>lua require("customscript").select_indent_block()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('x', 'gs', '<cmd>lua require("customscript").select_indent_block()<CR>', {noremap = true, silent = true})
 
-vim.g.EasyMotion_do_mapping = 0
-vim.api.nvim_set_keymap('n', 'ss', '<Plug>(easymotion-overwin-w)', {})
-vim.api.nvim_set_keymap('n', 'se', '<Plug>(easymotion-e)', {})
-vim.api.nvim_set_keymap('n', 'sd', '<Plug>(easymotion-overwin-f)', {})
-vim.api.nvim_set_keymap('n', 'sw', '<Plug>(easymotion-s2)', {})
+vim.keymap.set('n', 'ss', '<cmd>HopWordMW<CR>', { noremap = true })
+vim.keymap.set('n', 'sd', '<cmd>HopWordCurrentLine<CR>', { noremap = true })
+vim.keymap.set('n', 'sx', '<cmd>HopVertical<CR>', { noremap = true })
 
 vim.api.nvim_exec([[ autocmd InsertLeave * :silent !zenhan 0 ]], false)
