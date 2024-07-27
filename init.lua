@@ -34,9 +34,9 @@ vim.api.nvim_set_keymap('n', 'gs', '<cmd>lua require("customscript").select_inde
 vim.api.nvim_set_keymap('x', 'gs', '<cmd>lua require("customscript").select_indent_block()<CR>', {noremap = true, silent = true})
 
 vim.g.EasyMotion_do_mapping = 0
-vim.api.nvim_set_keymap('n', 'sw', '<Plug>(easymotion-overwin-w)', {})
+vim.api.nvim_set_keymap('n', 'ss', '<Plug>(easymotion-overwin-w)', {})
 vim.api.nvim_set_keymap('n', 'se', '<Plug>(easymotion-e)', {})
 vim.api.nvim_set_keymap('n', 'sd', '<Plug>(easymotion-overwin-f)', {})
-vim.api.nvim_set_keymap('n', 'ss', '<Plug>(easymotion-s2)', {})
+vim.api.nvim_set_keymap('n', 'sw', '<Plug>(easymotion-s2)', {})
 
 vim.api.nvim_exec([[ autocmd InsertLeave * :silent !zenhan 0 ]], false)
