@@ -36,7 +36,8 @@ plugins = {
                 }
             })
         end
-    }
+    },
+    {"easymotion/vim-easymotion"}
 }
 
 require('lazy').setup(plugins, {})
