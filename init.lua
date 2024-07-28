@@ -27,9 +27,6 @@ vim.keymap.set("v", "<C-x>", function()
     require("dial.map").manipulate("decrement", "visual")
 end, {desc = "Visual Decrement"})
 
-vim.keymap.set('n', '<C-y>', '<cmd>normal! <C-y><C-y><CR>', { noremap = true })
-vim.keymap.set('n', '<C-e>', '<cmd>normal! <C-e><C-e><CR>', { noremap = true })
-
 vim.api.nvim_set_keymap('n', 'gs', '<cmd>lua require("customscript").select_indent_block()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('x', 'gs', '<cmd>lua require("customscript").select_indent_block()<CR>', {noremap = true, silent = true})
 
