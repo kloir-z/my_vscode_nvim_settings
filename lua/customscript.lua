@@ -1,15 +1,15 @@
 local M = {}
 
 function M.select_indent_block()
+    local mode = vim.api.nvim_get_mode().mode
+
+    if mode == 'v' or mode == 'V' then
+        vim.api.nvim_command('normal! v')
+    end
+
     vim.api.nvim_command('normal! ^')
     vim.api.nvim_command('normal! h')
-    local visual_mode_at_start = true
-
-    local mode = vim.api.nvim_get_mode().mode
-    if mode ~= 'v' and mode ~= 'V' then
-        vim.api.nvim_command('normal! v')
-        visual_mode_at_start = false
-    end
+    vim.api.nvim_command('normal! v')
 
     local start_line = vim.fn.line('.')
 
@@ -27,7 +27,7 @@ function M.select_indent_block()
         end
     end
 
-    if visual_mode_at_start == false then vim.api.nvim_command('normal! o') end
+    vim.api.nvim_command('normal! o')
 
     local start_line = vim.fn.line('.')
 
