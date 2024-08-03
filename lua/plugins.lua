@@ -22,7 +22,9 @@ plugins = {
             local augend = require("dial.augend")
             require("dial.config").augends:register_group({
                 default = {
-                    augend.constant.new {
+                    augend.integer.alias.decimal,
+                    augend.constant
+                        .new {
                         elements = {"true", "false"},
                         word = true,
                         cyclic = true
@@ -40,7 +42,7 @@ plugins = {
         "phaazon/hop.nvim",
         branch = "v2",
         config = function() require("hop").setup({multi_windows = true}) end
-    }
+    }, {"bkad/CamelCaseMotion"}
 }
 
 require('lazy').setup(plugins, {})
